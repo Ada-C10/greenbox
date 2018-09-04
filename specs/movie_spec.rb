@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
 
-xdescribe 'GreenBox::Movie' do
+describe 'GreenBox::Movie' do
   let (:movie) { GreenBox::Movie.new(3, 'Green Lantern',
                                'Fox',
                                actors: ['Ryan Reynolds', 'Blake Lively']) }
@@ -34,7 +34,7 @@ xdescribe 'GreenBox::Movie' do
     end
   end
 
-  xdescribe 'stars_actor' do
+  describe 'stars_actor' do
     it 'returns true if the movie does feature the actor' do
       expect(movie.stars_actor('Ryan Reynolds')).must_equal true
     end

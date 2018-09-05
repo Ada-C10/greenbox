@@ -13,17 +13,14 @@ module GreenBox
       end
     end
 
-
     def contains(date)
-      if ((date = start_date) || (date > start_date)) && (date < end_date)
+      if (date >= start_date) && (date < end_date)
         return true
-      elsif
-        date < start_date || date = end_date
+      else
+        date < start_date && date >= end_date
         return false
       end
     end
-
-
 
     def overlaps(other_date_range)
     end

@@ -7,17 +7,23 @@ module GreenBox
     def initialize(start_date, end_date)
       @start_date = start_date
       @end_date = end_date
-      # date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),
-      #                                      Time.parse('2018-08-10'))
 
-      if GreenBox::DateRange.new(Time.parse('2018-08-09'),
-                                               Time.parse('2018-08-08'))
+      if start_date > end_date
         raise ArgumentError.new "The end date is before the start date"
       end
     end
 
+
     def contains(date)
+      if ((date = start_date) || (date > start_date)) && (date < end_date)
+        return true
+      elsif
+        date < start_date || date = end_date
+        return false
+      end
     end
+
+
 
     def overlaps(other_date_range)
     end
@@ -25,6 +31,5 @@ module GreenBox
     def nights
     end
 
-    
   end
 end

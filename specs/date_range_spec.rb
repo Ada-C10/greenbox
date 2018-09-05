@@ -52,7 +52,7 @@ describe 'GreenBox::DateRange' do
     end
   end
 
-  xdescribe 'contains' do
+  describe 'contains' do
     let (:date_range) do
       GreenBox::DateRange.new(Time.parse('2018-08-01'),
                               Time.parse('2018-08-05'))

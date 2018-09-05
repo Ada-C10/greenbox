@@ -89,7 +89,7 @@ A `Rental` will contain an `initialize` method and the following attributes:
 *   movie:  The movie being rented
 *   customer:  The name of the customer making the rental
 
-A `Rental` will have the follwing methods:
+A `Rental` will have the following methods:
 
 *   `cost`:  This method will return the cost of the rental.  A movie rental will cost $3.0 per night.  The customer is **not** charged for the day the movie is checked in.  So a movie checked out on August 8th and checked in August 10th would cost $3.00 * 2 days = $6.00
 
@@ -114,4 +114,4 @@ The `RentalManager` will be able to perform the following actions (methods):
 ## Optional Enhancements
 
 You can add the following methods along with tests to further enhance this project:
--  movies_staring(actor_name, date_range):  This method will list all movies available in the given date range and with the provied actor.
+-  movies_staring(actor_name, date_range):  This method will list all movies available in the given date range and with the provided actor.

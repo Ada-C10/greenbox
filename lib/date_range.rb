@@ -22,11 +22,28 @@ module GreenBox
       end
     end
 
+
     def overlaps(other_date_range)
+      (start_date <= other_date_rage.start_date) && (other_date_rage.end_date < end_date)
     end
 
+
+     # current_date_range = (start_date...end_date)
+     #   # if start_date....end_date)
+     #   if (current_date_range).overlaps?(other_date_range)
+     #     return true
+     #   end
+    # end
+    # if (start_date...end_date.include? other_date_rage)
+    #   return true
+    # else
+    #   return false
+    # end
+
     def nights
-    end
+      count = (end_date - start_date)/(60*60*24)
+     return count
+   end
 
   end
 end

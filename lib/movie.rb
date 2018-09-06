@@ -9,9 +9,9 @@ module GreenBox
       @id = id
       @title = title
       @publisher = publisher
-      @actors = actors #--> this needs to contain values - array/hash
-      # actors = []
+      @actors = actors
     end
+
     movie = GreenBox::Movie.new(4,'Happiness','Fox',actors:['Denzel Washington', 'LL Cool J'])
 
 
@@ -25,4 +25,4 @@ module GreenBox
     end
 
   end
-end 
+end

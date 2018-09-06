@@ -4,7 +4,7 @@ require_relative 'spec_helper'
 
 describe 'GreenBox::DateRange' do
 
-  describe 'initialization' do
+  xdescribe 'initialization' do
     it 'can be created' do
       date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),
                                            Time.parse('2018-08-09'))
@@ -19,7 +19,7 @@ describe 'GreenBox::DateRange' do
     end
   end
 
-  xdescribe 'overlaps' do
+  describe 'overlaps' do
 
     it "returns true if two DateRange objects overlap, one date's start date inside another" do
       date_1 = GreenBox::DateRange.new(Time.parse('2018-08-01'),
@@ -52,7 +52,7 @@ describe 'GreenBox::DateRange' do
     end
   end
 
-  describe 'contains' do
+  xdescribe 'contains' do
     let (:date_range) do
       GreenBox::DateRange.new(Time.parse('2018-08-01'),
                               Time.parse('2018-08-05'))
@@ -69,7 +69,7 @@ describe 'GreenBox::DateRange' do
     end
   end
 
-  describe 'nights' do
+  xdescribe 'nights' do
     let (:date_range) do
       GreenBox::DateRange.new(Time.parse('2018-08-01'),
                               Time.parse('2018-08-05'))

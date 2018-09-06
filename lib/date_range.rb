@@ -17,22 +17,32 @@ module GreenBox
       if (date >= start_date) && (date < end_date)
         return true
       else
-        date < start_date && date >= end_date
+        date < start_date || date >= end_date
         return false
       end
     end
 
 
     def overlaps(other_date_range)
-      (start_date <= other_date_rage.start_date) && (other_date_rage.end_date < end_date)
+      if contains(other_date_range.start_date) || contains(other_date_range.end_date)
+        true
+      elsif other_date_range.contains(start_date) && other_date_range.contains(end_date)
+        true
+      else
+        false
+      end
     end
 
 
-     # current_date_range = (start_date...end_date)
-     #   # if start_date....end_date)
-     #   if (current_date_range).overlaps?(other_date_range)
-     #     return true
-     #   end
+      # if
+      #   start_date < other_date_range.start_date && other_date_range.end_date < end_date
+      #   false
+      # end
+    # current_date_range = (start_date...end_date)
+    #   # if start_date....end_date)
+    #   if (current_date_range).overlaps?(other_date_range)
+    #     return true
+    #   end
     # end
     # if (start_date...end_date.include? other_date_rage)
     #   return true
@@ -42,8 +52,8 @@ module GreenBox
 
     def nights
       count = (end_date - start_date)/(60*60*24)
-     return count
-   end
+      return count
+    end
 
   end
 end

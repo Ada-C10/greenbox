@@ -6,14 +6,14 @@ require_relative 'rental'
 
 module GreenBox
   class MovieReserver
-    attr_reader :movies,:rentals
+    attr_accessor :movies,:rentals
 
-    def initialize(movies,rentals)
-      @movies = load_movies
-      @rentals = rentals
+    def initialize
+      @movies = MovieReserver.load_movies
+      @rentals = []
+      # @reserver = reserver
+      # @date_range = date_range
     end
-
-     # reservation = GreenBox::MovieReserver.new(movies,rentals)
 
     def self.load_movies
       showtime_movies  = []
@@ -32,8 +32,6 @@ module GreenBox
       return showtime_movies
     end
 
-
-
     def available_movies(date_range)
     end
 
@@ -41,4 +39,6 @@ module GreenBox
     end
 
   end
+  # reserver = GreenBox::MovieReserver.new
+  # date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'), Time.parse('2018-08-09')
 end

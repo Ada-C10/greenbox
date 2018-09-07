@@ -4,7 +4,7 @@ require_relative 'spec_helper'
 
 describe 'GreenBox::DateRange' do
 
-  xdescribe 'initialization' do
+  describe 'initialization' do
     it 'can be created' do
       date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),
                                            Time.parse('2018-08-09'))
@@ -52,7 +52,7 @@ describe 'GreenBox::DateRange' do
     end
   end
 
-  xdescribe 'contains' do
+  describe 'contains' do
     let (:date_range) do
       GreenBox::DateRange.new(Time.parse('2018-08-01'),
                               Time.parse('2018-08-05'))

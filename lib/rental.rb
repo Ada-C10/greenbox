@@ -16,13 +16,9 @@ module GreenBox
     end
 
     def cost
-      # date_range.nights returns an integer of total nights 
-      # need to subtract one night (day) to calculate correct cost
       rent = @date_range.nights
-      # cost is number of days multipled by three dollars (per day) 
-      cost = rent * 3.0
-      # rounding should return the correct cents. 
-      return cost.round(2) 
+      cost = rent * 3.0 
+      return cost.round(2)
     end
   end
 end

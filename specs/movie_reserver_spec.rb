@@ -2,17 +2,17 @@ require_relative 'spec_helper'
 
 MOVIES_IN_CSV = 11
 
-xdescribe 'GreenBox::MovieReserver' do
+describe 'GreenBox::MovieReserver' do
   let (:reserver) { GreenBox::MovieReserver.new }
   let (:date_range) { GreenBox::DateRange.new(Time.parse('2018-08-08'), Time.parse('2018-08-09')) }
 
   describe 'initialization' do
 
-    xit 'can be instantiated' do
+    it 'can be instantiated' do
       expect(reserver).must_be_instance_of GreenBox::MovieReserver
     end
 
-    xit 'has the proper number of movies' do
+    it 'has the proper number of movies' do
       expect(reserver.movies.length).must_equal MOVIES_IN_CSV
     end
   end
@@ -20,11 +20,11 @@ xdescribe 'GreenBox::MovieReserver' do
   describe 'load_movies' do
     let (:movie_list) { GreenBox::MovieReserver.load_movies }
 
-    xit 'loads the right number of movies' do
+    it 'loads the right number of movies' do
       expect(movie_list.length).must_equal MOVIES_IN_CSV
     end
 
-    xit 'loads the 1st movie' do
+    it 'loads the 1st movie' do
       first_movie = movie_list.first
 
       expect(first_movie.title).must_equal 'Green Lantern'
@@ -32,7 +32,7 @@ xdescribe 'GreenBox::MovieReserver' do
       expect(first_movie.publisher).must_equal 'Fox'
     end
 
-    xit 'loads the last movie' do
+    it 'loads the last movie' do
       last_movie = movie_list.last
 
       expect(last_movie.title).must_equal 'Crazy Rich Asians'
@@ -40,7 +40,7 @@ xdescribe 'GreenBox::MovieReserver' do
       expect(last_movie.publisher).must_equal 'Warner Bros'
     end
 
-    xit 'loads the right actors' do
+    it 'loads the right actors' do
       first_movie = movie_list.first
 
       expect(first_movie.actors).must_include 'Blake Lively'
@@ -51,15 +51,15 @@ xdescribe 'GreenBox::MovieReserver' do
     end
   end
 
-  describe 'movies available' do
+  xdescribe 'movies available' do
 
-    xit 'will list the available movies' do
+    it 'will list the available movies' do
       available_movies = reserver.available_movies(date_range)
 
       expect(available_movies.length).must_equal 11
     end
 
-    xit 'will not include rented movies' do
+    it 'will not include rented movies' do
       date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'), Time.parse('2018-08-09'))
       reserver.rent_movie('Crazy Rich Asians', date_range, 'Ada Lovelace')
 

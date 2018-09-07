@@ -1,4 +1,5 @@
 require 'time'
+require_relative 'movie_reserver'
 
 module GreenBox
   class DateRange

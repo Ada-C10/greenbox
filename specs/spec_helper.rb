@@ -7,5 +7,7 @@ require 'awesome_print'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
+require_relative '../lib/rental'
 require_relative '../lib/movie'
 require_relative '../lib/date_range'
+# require_relative '../lib/movie_reserver'

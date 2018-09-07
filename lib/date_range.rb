@@ -9,6 +9,7 @@ module GreenBox
       @start_date = start_date
       @end_date = end_date
 
+
       if start_date > end_date
         raise ArgumentError.new "The end date is before the start date"
       end

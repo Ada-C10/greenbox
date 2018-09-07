@@ -12,7 +12,7 @@ module GreenBox
       @actors = actors
     end
 
-    movie = GreenBox::Movie.new(4,'Happiness','Fox',actors:['Denzel Washington', 'LL Cool J'])
+    # movie = GreenBox::Movie.new(4,'Happiness','Fox',actors:['Denzel Washington', 'LL Cool J'])
 
 
     def stars_actor(actor_name)
@@ -26,3 +26,5 @@ module GreenBox
 
   end
 end
+
+movie = GreenBox::Movie.new(4,'Happiness','Fox',actors:['Denzel Washington', 'LL Cool J'])

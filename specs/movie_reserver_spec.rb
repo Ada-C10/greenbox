@@ -88,13 +88,13 @@ describe 'GreenBox::MovieReserver' do
 
     end
 
-    xit 'cannot rent a movie already rented' do
+    it 'cannot rent a movie already rented' do
       # TODO Your Code goes here
 
 
     end
 
-    xit 'raises an error if a movie is requested that does not appear in the list' do
+    it 'raises an error if a movie is requested that does not appear in the list' do
       # TODO Your Code goes here
 
     end

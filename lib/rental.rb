@@ -2,6 +2,7 @@ require_relative 'date_range'
 require 'time'
 require_relative 'movie'
 
+
 module GreenBox
   class Rental
     attr_accessor :movie, :date_range, :customer
@@ -15,9 +16,10 @@ module GreenBox
       @customer = customer
     end
 
+
     def cost
       rent = @date_range.nights
-      cost = rent * 3.0 
+      cost = rent * 3.0
       return cost.round(2)
     end
   end

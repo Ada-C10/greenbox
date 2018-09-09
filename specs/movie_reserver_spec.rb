@@ -51,7 +51,7 @@ describe 'GreenBox::MovieReserver' do
     end
   end
 
-  xdescribe 'movies available' do
+  describe 'movies available' do
 
     it 'will list the available movies' do
       available_movies = reserver.available_movies(date_range)

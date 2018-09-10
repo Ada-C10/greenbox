@@ -76,29 +76,36 @@ describe 'GreenBox::MovieReserver' do
   end
 
   # xdescribe 'rent_movie' do
-  #   xit 'returns a rental for a successfully rented movie' do
-  #     @rental.rent_movie(id = 3)
-  #     expect(@rental.rent.movie).must.be.equal_to ('Blackklansman', Time.parse('2018-08-08'), Time.parse('2018-08-09')) end
-  #   end
-  #
-  #   it 'can rent multiple movies with the same title' do
+    xit 'returns a rental for a successfully rented movie' do
+
+      # arrange
+      @rental = [ ]
+      # act
+      # assert
+          ## the rent_movie methods will return
+            
+      @rental.rent_movie(id = 3)
+      expect(@rental.rent.movie).must.be.equal_to ('Blackklansman', Time.parse('2018-08-08'), Time.parse('2018-08-09')) end
+    end
+
+    it 'can rent multiple movies with the same title' do
       # Your Code goes here
-  #
-  #
-  #   end
-  #
-  #   it 'cannot rent a movie already rented' do
-  #     rental = @rental.rent_movie()
-  #     expect{available_movies}.must_be_empty
-  #
-  #
-  #   end
-  #
-  #   it 'raises an error if a movie is requested that does not appear in the list' do
-  #     @rental.find_movie().movie_rented
-  #     @rental.find_movie().movie_rented
-  #     expect{rental.rent_movie}.must_raise ArgumentError
-  #
-  #   end
-  # end
+
+
+    end
+
+    it 'cannot rent a movie already rented' do
+      rental = @rental.rent_movie()
+      expect{available_movies}.must_include
+
+
+    end
+
+    it 'raises an error if a movie is requested that does not appear in the list' do
+      @rental.find_movie().movie_rented
+      @rental.find_movie().movie_rented
+      expect{rental.rent_movie}.must_raise ArgumentError
+
+    end
+  end
 end

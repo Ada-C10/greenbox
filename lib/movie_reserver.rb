@@ -70,9 +70,11 @@ module GreenBox
   # *   `rent_movie(movie_title, date_range, customer_name)`:  This method will attempt to reserve a movie with the given title for the given date range.  If the movie is not available in that range the method should raise a `StandardError`.
 
   def rent_movie(movie_title, date_range, customer_name)
-  # It seems like rent movie, moves the movie (title, date range and customer from available_movie array  to @rentals array)
-  # Look to see if the movie with the given title is available within that date_range (method above)in rentals
-  # if that movie not part of available_movie method, we should raise an argumeent error.
+
+
+    # Look to see if the movie with the given title is available within that date_range (method above)in rentals
+  # If available rent movie, moves the movie (title, date range and customer from available_movie array  to @rentals array)
+  # if that movie not part of available_movie method, we should raise an Argument error.
 
   end
 

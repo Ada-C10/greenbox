@@ -1,6 +1,7 @@
 require 'csv'
 
 module GreenBox
+  #A 'movie class' represents a film in our system database
   class Movie
     attr_reader :id, :title, :publisher, :actors
 
@@ -13,6 +14,7 @@ module GreenBox
 
     movie = GreenBox::Movie.new(4,'Happiness','Fox',actors:['Denzel Washington', 'LL Cool J'])
 
+    #This method will return true if the given actor does appear in the movie.
 
     def stars_actor(actor_name)
       actors.each do |actor|

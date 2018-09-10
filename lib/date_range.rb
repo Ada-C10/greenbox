@@ -2,6 +2,7 @@ require 'time'
 require_relative 'movie_reserver'
 
 module GreenBox
+  # When a movie is being rented you need to understand when that rental occurs.  To represent that interval of time, you will create a `DateRange` class.
   class DateRange
     attr_reader :start_date , :end_date, :nights
 
@@ -14,6 +15,7 @@ module GreenBox
       end
     end
 
+#  `contains(date)` - This method returns true if the date occurs on or after the start date and before the end date.
     def contains(date)
       if (date >= @start_date) && (date < @end_date)
         return true
@@ -23,6 +25,8 @@ module GreenBox
       end
     end
 
+
+# `overlaps(other_date_range)` - This method takes another date range as a parameter and returns `true` if the date ranges overlap.
     def overlaps(other_date_range)
       if contains(other_date_range.start_date) || contains(other_date_range.end_date)
         true
@@ -33,6 +37,7 @@ module GreenBox
       end
     end
 
+# `nights` - This method will return the number of nights included in the given `DateRange.
     def nights
       count = (@end_date - @start_date)/(60*60*24)
       return count

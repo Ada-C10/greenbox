@@ -4,6 +4,7 @@ require_relative 'movie'
 
 
 module GreenBox
+  # A `Rental` represents a movie rental in the system.
   class Rental
     attr_accessor :movie, :date_range, :customer
 
@@ -13,10 +14,11 @@ module GreenBox
       end
       @movie = movie
       @date_range = date_range
+      # *   customer:  The name of the customer making the rental
       @customer = customer
     end
 
-
+# *   `cost`:  This method will return the cost of the rental.  A movie rental will cost $3.0 per night.  The customer is **not** charged for the day the movie is checked in.  So a movie checked out on August 8th and checked in August 10th would cost $3.00 * 2 days = $6.00
     def cost
       rent = @date_range.nights
       cost = rent * 3.0

@@ -102,7 +102,7 @@ This class will contain an `initialize` method and the following attributes:
 *   movies:  The list of movies available in the system
 *   rentals:  A list of all the rentals which have occurred.
 
-The `RentalManager` will be able to perform the following actions (methods):
+The `MovieReserver` will be able to perform the following actions (methods):
 
 *   `self.load_movies`: This method will open the csv file `movies.csv` and read in the movies and return an array of the given movies.  Note the actors are separated by the `:` character.  You will need to break up that field.
     -   The `initialize` method should use `self.load_movies` to read in the movie list for the application

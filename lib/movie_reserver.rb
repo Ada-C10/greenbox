@@ -18,7 +18,7 @@ module GreenBox
     end
 
 
-# `self.load_movies`: This method will open the csv file `movies.csv` and read in the movies and return an array of the given movies.  Note the actors are separated by the `:` character.  You will need to break up that field.
+      # `self.load_movies`: This method will open the csv file `movies.csv` and read in the movies and return an array of the given movies.  Note the actors are separated by the `:` character.  You will need to break up that field.
     def self.load_movies
       showtime_movies  = []
 
@@ -63,19 +63,16 @@ module GreenBox
         end
       end
     end
-  end
+    # *   `rent_movie(movie_title, date_range, customer_name)`:  This method will attempt to reserve a movie with the given title for the given date range.  If the movie is not available in that range the method should raise a `StandardError`.
+
+    def rent_movie(movie_title, date_range, customer_name)
 
 
+      # Look to see if the movie with the given title is available within that date_range (method above)in rentals
+      # If available rent movie, moves the movie (title, date range and customer from available_movie array  to @rentals array)
+      # if that movie not part of available_movie method, we should raise an Argument error.
 
-  # *   `rent_movie(movie_title, date_range, customer_name)`:  This method will attempt to reserve a movie with the given title for the given date range.  If the movie is not available in that range the method should raise a `StandardError`.
-
-  def rent_movie(movie_title, date_range, customer_name)
-
-
-    # Look to see if the movie with the given title is available within that date_range (method above)in rentals
-  # If available rent movie, moves the movie (title, date range and customer from available_movie array  to @rentals array)
-  # if that movie not part of available_movie method, we should raise an Argument error.
-
+    end
   end
 
 end

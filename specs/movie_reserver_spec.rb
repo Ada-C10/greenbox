@@ -59,7 +59,7 @@ describe 'GreenBox::MovieReserver' do
       expect(available_movies.length).must_equal 11
     end
 
-    xit 'will not include rented movies' do
+    it 'will not include rented movies' do
       date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'), Time.parse('2018-08-09'))
       reserver.rent_movie('Crazy Rich Asians', date_range, 'Ada Lovelace')
 
@@ -77,18 +77,18 @@ describe 'GreenBox::MovieReserver' do
 
   describe 'rent_movie' do
     it 'returns a rental for a successfully rented movie' do
-    #Setup
-  movie_reserver  = GreenBox::MovieReserver.new
-  title = 'Crazy Rich Asians'
-  date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),Time.parse('2018-08-09'))
-  customer_name = ' Sabine '
+      #Setup
+      movie_reserver  = GreenBox::MovieReserver.new
+      title = 'Crazy Rich Asians'
+      date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),Time.parse('2018-08-09'))
+      customer_name = ' Sabine '
 
-    #Method under testn(call the things that I am verifying)
-    rental = movie_reserver.rent_movie(title, date_range, customer_name)
+      #Method under testn(call the things that I am verifying)
+      rental = movie_reserver.rent_movie(title, date_range, customer_name)
 
-    #Assertions - something that has changed that tells
-    #us we have the expected result
-    expect(rental).wont_be_nil
+      #Assertions - something that has changed that tells
+      #us we have the expected result
+      expect(rental).wont_be_nil
 
     end
 
@@ -118,36 +118,36 @@ describe 'GreenBox::MovieReserver' do
 
 
     it 'cannot rent a movie already rented' do
-      # movie_reserver  = GreenBox::MovieReserver.new
-      #
-      # title = 'Crazy Rich Asians'
-      #
-      # date_range_a = GreenBox::DateRange.new(Time.parse('2018-08-09'),Time.parse('2018-08-10'))
-      # customer_name_a = ' Andrew '
-      #
-      # date_range_b = GreenBox::DateRange.new(Time.parse('2018-08-08'),Time.parse('2018-08-09'))
-      # customer_name_b = ' Sabine '
-
 
       movie_reserver  = GreenBox::MovieReserver.new
       title = 'Crazy Rich Asians'
       date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),Time.parse('2018-08-09'))
       customer_name = ' Sabine '
 
-        #Method under test(call the things that I am verifying)
-        rental_a = movie_reserver.rent_movie(title, date_range, customer_name)
-        rental_b = movie_reserver.rent_movie(title, date_range, customer_name)
+      #Method under test(call the things that I am verifying)
+      rental_a = movie_reserver.rent_movie(title, date_range, customer_name)
+      rental_b = movie_reserver.rent_movie(title, date_range, customer_name)
 
-        #Assertions/Expectation - something that has changed that tells
-        #us we have the expected result
-        expect(rental_a).wont_be_nil
-        expect(rental_b).must_be_nil
-
+      #Assertions/Expectation - something that has changed that tells
+      #us we have the expected result
+      expect(rental_a).wont_be_nil
+      expect(rental_b).must_be_nil
+      # expect(rental_a).must_equal(rental_b)
     end
 
     it 'raises an error if a movie is requested that does not appear in the list' do
 
-      
+      movie_reserver  = GreenBox::MovieReserver.new
+      title = 'Crazy Rich Asians'
+      date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),Time.parse('2018-08-09'))
+      customer_name = ' Sabine '
+
+      # checking for errors
+      expect {
+        movie_reserver.rent_movie(title, date_range, customer_name)
+
+        # (the "method under test" section goes inside!)
+      }.must_raise StandardError
 
     end
   end

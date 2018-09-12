@@ -64,7 +64,7 @@ describe 'GreenBox::MovieReserver' do
       reserver.rent_movie('Crazy Rich Asians', date_range, 'Ada Lovelace')
 
       available_movies = reserver.available_movies(date_range)
-      expect(available_movies.length).must_equal 10
+      expect(available_movies).must_equal 10
 
       movie_id = 2
       movie_id_2 = available_movies.find do |movie|
@@ -112,9 +112,7 @@ describe 'GreenBox::MovieReserver' do
       expect(rental_b).wont_be_nil
       expect(rental_a).wont_equal(rental_b)
 
-
     end
-
 
 
     it 'cannot rent a movie already rented' do
@@ -138,7 +136,7 @@ describe 'GreenBox::MovieReserver' do
     it 'raises an error if a movie is requested that does not appear in the list' do
 
       movie_reserver  = GreenBox::MovieReserver.new
-      title = 'Crazy Rich Asians'
+      title = 'Blackklansman'
       date_range = GreenBox::DateRange.new(Time.parse('2018-08-08'),Time.parse('2018-08-09'))
       customer_name = ' Sabine '
 
